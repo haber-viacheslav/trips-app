@@ -2,20 +2,35 @@
   "compilerOptions": {
     "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "baseUrl": "src",
     "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react",
+    "typeRoots": ["node_modules/@types", "custom_typings"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "~/*": ["./public/*"]
+    },
+    "incremental": true
   },
-  "include": ["src"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "src/components/Footer/Footer.js",
+    "src/helpers/validation.ts"
+  ],
+  "files": [
+    "node_modules/@types/react-dom/index.d.ts",
+    "node_modules/@types/react/index.d.ts"
+  ],
+  "exclude": ["node_modules"],
+  "moduleResolution": ["node_modules", "node"]
 }

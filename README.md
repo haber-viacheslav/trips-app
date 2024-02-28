@@ -1,46 +1,98 @@
-# Getting Started with Create React App
+<div align="center" id="top"> 
+  <img src="./.github/app.gif" alt="Trips App" />
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+&#xa0;
 
-## Available Scripts
+![App Screenshot](https://res.cloudinary.com/dj6mkr2e6/image/upload/v1691537395/Screenshot_29_w7jrja.jpg)
 
-In the project directory, you can run:
+<a href="https://trips-app-gold.vercel.app/">Trips app Demo</a>
 
-### `npm start`
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<h1 align="center">Trips App</h1>
+### Trips app with countdown timer and weather forecast test task for Reenbit
+<p align="center">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/haber-viacheslav/trips-app?color=56BEB8">
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/haber-viacheslav/trips-app?color=56BEB8">
 
-### `npm test`
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/haber-viacheslav/trips-app?color=56BEB8">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+</p>
 
-### `npm run build`
+<!-- Status -->
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ <h4 align="center">
+	🚧  Trips App 🚀 Under construction...  🚧
+</h4>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<hr>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p align="center">
+  <a href="#dart-about">About</a> &#xa0; | &#xa0; 
+  <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
+  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
+  <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
+  <a href="#checkered_flag-starting">Installation</a> &#xa0; | &#xa0;
+  <a href="https://github.com/haber-viacheslav" target="_blank">Author</a>
+</p>
 
-### `npm run eject`
+<br>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## :dart: About
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This application allows users to plan and manage their trips. Users can register
+and log in using their Google account, and then add, and view their trips. The
+app fetches weather information for the selected trip dates and displays it to
+the user. It also provides a countdown timer for each trip, showing how much
+time is left before the trip begins. Usage On the app's homepage, you'll see a
+list of your trips. To add a new trip, click the "Add Trip" button and fill in
+the trip details in the form. If you're not logged in, you'll be prompted to log
+in using your Google account before you can add trips. Click on a trip to view
+more details, including weather information and the countdown timer. To log out,
+click the "Log Out" button. Enjoy planning your trips with the Travel Planner
+App!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## :sparkles: Features
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- User authentication using Google account Adding and viewing trip details
+- Fetching and displaying weather information for selected trip dates
+- Countdown timer for each trip
+- User-friendly and intuitive interface
+- Horizontal scroll
 
-## Learn More
+## :rocket: Technologies
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The following tools were used in this project:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- React
+- React Router DOM
+- Type Script
+- Axios
+- Styled Components
+- React Icons
+- Modern-normalize
+- Firebase
+- React-firebase-hooks
+
+## :white_check_mark: Requirements
+
+Before starting :checkered_flag:, you need to have [Git](https://git-scm.com)
+and [Node](https://nodejs.org/en/) installed.
+
+## :checkered_flag: Installation
+
+1. Clone this repository to your local machine using git clone
+   https://github.com/haber-viacheslav/trips-app.git
+2. Navigate to the project directory using cd trips-app
+3. Run `npm install` to install the dependencies.
+4. Run `npm start` to start the development server.
+5. Open `http://localhost:3000` in your web browser.
+
+Made with :heart: by
+<a href="https://github.com/haber-viacheslav" target="_blank">Haber
+Viacheslav</a>
+
+&#xa0;
+
+<a href="#top">Back to top</a>

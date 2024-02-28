@@ -9,7 +9,7 @@ import {
 import { getTimeForTimer } from '../../helpers/getTimeForTimer';
 
 interface TimerProps {
-  tripTime: Date;
+  tripTime: Date | number;
 }
 
 export const Timer: React.FC<TimerProps> = ({ tripTime }) => {

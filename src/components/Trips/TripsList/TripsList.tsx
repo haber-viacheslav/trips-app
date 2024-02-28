@@ -9,7 +9,7 @@ import {
 import { BiSolidChevronLeft, BiSolidChevronRight } from 'react-icons/bi';
 import { AddButton } from '../../UI/buttons/AddButton';
 import { TripsStyledAddItem } from '../TripsItem/TripsItem.styled';
-import { Trip } from '../TripsItem/TripsItem';
+import { Trip } from '../../../App';
 
 interface TripsListProps {
   visibleTrips: Trip[];
@@ -40,7 +40,7 @@ export const TripsList: React.FC<TripsListProps> = ({
     }
   };
 
-  const handleWheel = useCallback((e: React.WheelEvent<HTMLUListElement>) => {
+  const handleWheel = useCallback((e: WheelEvent) => {
     e.preventDefault();
     if (tripsRef.current) {
       tripsRef.current.scrollTo({

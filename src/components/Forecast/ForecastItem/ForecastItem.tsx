@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   ForecastStyledItem,
   ForecastDay,
@@ -5,11 +6,22 @@ import {
   ForecastImg,
   ForecastTemperature,
 } from './ForecastItem.styled';
-import { weatherIcon } from 'images/images';
-import { getDayOfWeek } from 'helpers/getDayOfWeek';
-export const ForecastItem = ({
-  forecast: { datetime, icon, description, tempmax, tempmin },
-}) => {
+import { weatherIcon } from '../../../images/images';
+import type { WeatherIconKey } from '../../../images/images';
+import { getDayOfWeek } from '../../../helpers/getDayOfWeek';
+
+interface ForecastItemProps {
+  forecast: {
+    datetime: string;
+    icon: WeatherIconKey;
+    description: string;
+    tempmax: number;
+    tempmin: number;
+  };
+}
+
+export const ForecastItem: React.FC<ForecastItemProps> = ({ forecast }) => {
+  const { datetime, icon, description, tempmax, tempmin } = forecast;
   return (
     <ForecastStyledItem>
       <ForecastDay>{getDayOfWeek(datetime)}</ForecastDay>

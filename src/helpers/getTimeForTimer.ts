@@ -4,10 +4,18 @@
  * @returns An object containing the remaining days, hours, minutes, and seconds.
  */
 export const getTimeForTimer = (
-  startTimeFromTrip: Date
+  startTimeFromTrip: Date | number
 ): { days: number; hours: number; minutes: number; seconds: number } => {
   const now = new Date().getTime();
-  const differenceTime = startTimeFromTrip.getTime() - now;
+  let startTime: number;
+
+  if (typeof startTimeFromTrip === 'number') {
+    startTime = startTimeFromTrip;
+  } else {
+    startTime = startTimeFromTrip.getTime();
+  }
+
+  const differenceTime = startTime - now;
 
   if (differenceTime <= 0) {
     return {

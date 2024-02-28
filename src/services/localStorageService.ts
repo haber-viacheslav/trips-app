@@ -1,28 +1,16 @@
 class LocalStorageService {
   getItem<T>(key: string): T | undefined {
-    try {
-      const serializedValue = localStorage.getItem(key);
-      return serializedValue ? JSON.parse(serializedValue) : undefined;
-    } catch (error) {
-      throw error;
-    }
+    const serializedValue = localStorage.getItem(key);
+    return serializedValue ? JSON.parse(serializedValue) : undefined;
   }
 
-  setItem(key: string, value: any): void {
-    try {
-      const serializedValue = JSON.stringify(value);
-      localStorage.setItem(key, serializedValue);
-    } catch (error) {
-      throw error;
-    }
+  setItem(key: string, value: unknown): void {
+    const serializedValue = JSON.stringify(value);
+    localStorage.setItem(key, serializedValue);
   }
 
   removeItem(key: string): void {
-    try {
-      localStorage.removeItem(key);
-    } catch (error) {
-      throw error;
-    }
+    localStorage.removeItem(key);
   }
 }
 

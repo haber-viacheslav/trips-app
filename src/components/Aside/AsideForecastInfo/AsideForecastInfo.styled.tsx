@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { weatherIcon } from 'images/images';
+import { weatherIcon } from '../../../images/images';
 
 export const AsideStyledForecastInfo = styled.aside`
   position: absolute;

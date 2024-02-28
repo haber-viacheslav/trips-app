@@ -1,5 +1,4 @@
-import { weatherIcon } from 'images/images';
-import { getDayOfWeek } from 'helpers/getDayOfWeek';
+import React from 'react';
 import {
   ForecastStyledWrp,
   ForecastStyledTitle,
@@ -9,8 +8,23 @@ import {
   ForecastStyledLocation,
   ForecastStyledSup,
 } from './AsideForecastCard.styled';
-import { trimStringForCards } from 'helpers/trimStringForCards';
-export const AsideForecastCard = ({ forecast }) => {
+import { weatherIcon } from '../../../images/images';
+import { getDayOfWeek } from '../../../helpers/getDayOfWeek';
+import { trimStringForCards } from '../../../helpers/trimStringForCards';
+import { WeatherDay } from '@/api/weatherApi';
+
+interface Forecast {
+  days: WeatherDay[];
+  address: string;
+}
+
+interface AsideForecastCardProps {
+  forecast: Forecast;
+}
+
+export const AsideForecastCard: React.FC<AsideForecastCardProps> = ({
+  forecast,
+}) => {
   const { days, address } = forecast;
   const dayForecastData = days[0];
   const { temp, icon, datetime, description } = dayForecastData;
@@ -25,7 +39,7 @@ export const AsideForecastCard = ({ forecast }) => {
           loading="lazy"
           width="120"
         />
-        <ForecastStyledTemp>{Math.round(temp)}</ForecastStyledTemp>
+        <ForecastStyledTemp>{Math.round(+temp)}</ForecastStyledTemp>
         <ForecastStyledSup>&deg;C</ForecastStyledSup>
       </ForecastStyledContentWrp>
       <ForecastStyledLocation>

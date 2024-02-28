@@ -1,4 +1,4 @@
-type WeatherIconKey =
+export type WeatherIconKey =
   | 'partly-cloudy-day'
   | 'clear-day'
   | 'rain'

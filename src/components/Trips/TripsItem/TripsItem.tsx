@@ -10,14 +10,7 @@ import {
 } from './TripsItem.styled';
 import { trimStringForCards } from '../../../helpers/trimStringForCards';
 import { formatRequestDate } from '../../../helpers/formatRequestDate';
-
-export interface Trip {
-  id: number;
-  name: string;
-  imageUrl: string;
-  startTime: number;
-  endTime: number;
-}
+import { Trip } from '../../../App';
 
 interface TripsItemProps {
   tripData: Trip;

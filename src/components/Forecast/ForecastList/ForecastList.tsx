@@ -1,24 +1,34 @@
-import { useRef, useEffect, useCallback } from 'react';
+import React, { useRef, useEffect, useCallback } from 'react';
 import { nanoid } from 'nanoid';
 import {
   ForecastStyledListWrp,
   ForecastStyledList,
   ForecastStyledTitle,
 } from './ForecastList.styled';
-import { ForecastItem } from 'components/ForecastItem/ForecastItem';
-import { convertNumOfDaysToString } from 'helpers/convertNumOfDaysToString';
-export const ForecastList = ({ forecastsData }) => {
-  const forecastsRef = useRef();
-  let forecasts = [...forecastsData.days];
+import { ForecastItem } from '../ForecastItem/ForecastItem';
+import { convertNumOfDaysToString } from '../../../helpers/convertNumOfDaysToString';
+import { WeatherResponse } from '@/api/weatherApi';
+
+export type ForecastListProps = {
+  forecastsData: Pick<WeatherResponse, 'days'>;
+};
+
+export const ForecastList: React.FC<ForecastListProps> = ({
+  forecastsData,
+}) => {
+  const forecastsRef = useRef<HTMLUListElement>(null);
+  const forecasts = [...forecastsData.days];
   if (forecasts.length > 0) {
     forecasts.map(forecastData => (forecastData.id = nanoid()));
   }
-  const handleWheel = useCallback(e => {
+  const handleWheel = useCallback((e: WheelEvent) => {
     e.preventDefault();
-    forecastsRef.current.scrollTo({
-      left: forecastsRef.current.scrollLeft + e.deltaY * 2,
-      behavior: 'smooth',
-    });
+    if (forecastsRef.current) {
+      forecastsRef.current.scrollTo({
+        left: forecastsRef.current.scrollLeft + e.deltaY * 2,
+        behavior: 'smooth',
+      });
+    }
   }, []);
   useEffect(() => {
     const tripsList = forecastsRef.current;

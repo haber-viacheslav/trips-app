@@ -11,9 +11,9 @@ import {
   StyledLabelValidation,
   StyledButtonsContainer,
 } from './AddForm.styled';
-
+import { Trip } from '@/App';
 interface City {
-  id: number;
+  id: string;
   name: string;
   imageUrl: string;
 }
@@ -21,12 +21,7 @@ interface City {
 interface AddFormProps {
   cities: City[];
   onClick: () => void;
-  addTrip: (trip: {
-    name: string;
-    imageUrl: string;
-    startTime: number;
-    endTime: number;
-  }) => void;
+  addTrip: (trip: Trip) => void;
 }
 
 export const AddForm: React.FC<AddFormProps> = ({
@@ -34,10 +29,10 @@ export const AddForm: React.FC<AddFormProps> = ({
   onClick,
   addTrip,
 }) => {
-  const [selectedCity, setSelectedCity] = useState('');
-  const [startTime, setStartTime] = useState('');
-  const [endTime, setEndTime] = useState('');
-  const [isVerify, setIsVerify] = useState(false);
+  const [selectedCity, setSelectedCity] = useState<string>('');
+  const [startTime, setStartTime] = useState<string>('');
+  const [endTime, setEndTime] = useState<string>('');
+  const [isVerify, setIsVerify] = useState<boolean>(false);
 
   const now = new Date();
   const desiredTimeZoneDate = new Date(now.getTime() + 27 * 60 * 60 * 1000);
@@ -66,7 +61,7 @@ export const AddForm: React.FC<AddFormProps> = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const chosenCity = cities.find(city => city.id === +selectedCity);
+    const chosenCity = cities.find(city => +city.id === +selectedCity);
     if (!chosenCity) return;
 
     const newTrip = {
@@ -74,6 +69,7 @@ export const AddForm: React.FC<AddFormProps> = ({
       imageUrl: chosenCity.imageUrl,
       startTime: new Date(startTime).getTime(),
       endTime: new Date(endTime).getTime(),
+      id: chosenCity.id,
     };
     addTrip(newTrip);
     onClick();
@@ -87,7 +83,7 @@ export const AddForm: React.FC<AddFormProps> = ({
             <StyledLabelValidation>*</StyledLabelValidation>
           ) : (
             <AiOutlineCheck size="8" color="green" />
-          )}{' '}
+          )}
           City
         </StyledLabel>
         <StyledSelect
@@ -109,7 +105,7 @@ export const AddForm: React.FC<AddFormProps> = ({
             <StyledLabelValidation>*</StyledLabelValidation>
           ) : (
             <AiOutlineCheck size="8" color="green" />
-          )}{' '}
+          )}
           Start date
         </StyledLabel>
         <StyledInput

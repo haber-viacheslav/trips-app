@@ -5,7 +5,7 @@
  * @returns The formatted date string.
  */
 export const formatRequestDate = (
-  unixMs: number,
+  unixMs: number | Date,
   format: 'toPoints' | 'toDashes'
 ): string => {
   const date = new Date(unixMs);

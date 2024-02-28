@@ -38,18 +38,18 @@ export const StyledPrevScrollButton = styled.button`
   border-radius: 50%;
   border: none;
   background-color: ${props => props.theme.colors.lightBlue};
-  color: 'blue';
   display: flex;
   align-items: center;
   justify-content: center;
   transition: 250ms background-color ease-in-out, 250ms box-shadow ease-in-out;
   &:hover,
   &:focus {
-    background-color: ${props => props.theme.colors.lightArrowBtn};
+    background-color: ${props => props.theme.colors.yellow};
     box-shadow: ${props => props.theme.shadows.scrollBtnShadow};
-  }
-  &svg {
-    color: ${props => props.theme.colors.blue};
+    cursor: pointer;
+    & > svg {
+      fill: ${props => props.theme.colors.blue};
+    }
   }
 `;
 export const StyledNextScrollButton = styled(StyledPrevScrollButton)`

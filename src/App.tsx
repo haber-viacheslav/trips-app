@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useMemo, ChangeEvent } from 'react';
-import { SpeedInsights } from '@vercel/speed-insights/react';
 import { ThemeProvider } from 'styled-components';
 import { theme } from './theme/theme';
 import { Header } from './components/UI/Header/Header';
@@ -183,9 +182,8 @@ export function App() {
 
   const getVisibleTrips = (): Trip[] => {
     if (search) {
-      const normalizedSearch = search.toLowerCase();
       return visibleTrips.filter((visibleTrip: Trip) =>
-        visibleTrip.name.toLowerCase().includes(normalizedSearch)
+        visibleTrip.name.toLowerCase().startsWith(search.toLowerCase())
       );
     }
     return visibleTrips;
@@ -229,6 +227,7 @@ export function App() {
     };
     getWeather(selectedTrip);
   }, [selectedTrip]);
+
   return (
     <ThemeProvider theme={theme}>
       <Header />
@@ -295,7 +294,6 @@ export function App() {
           />
         </Modal>
       )}
-      <SpeedInsights />
     </ThemeProvider>
   );
 }

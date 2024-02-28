@@ -55,7 +55,8 @@ export const TripsList: React.FC<TripsListProps> = ({
       e.preventDefault();
       if (tripsRef.current) {
         tripsRef.current.scrollTo({
-          left: tripsRef.current.scrollLeft - 100,
+          left:
+            tripsRef.current.scrollLeft - tripsRef.current.clientWidth - 260,
           behavior: 'smooth',
         });
       }
@@ -67,8 +68,9 @@ export const TripsList: React.FC<TripsListProps> = ({
     (e: React.MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
       if (tripsRef.current) {
+        const containerWidth = tripsRef.current.clientWidth;
         tripsRef.current.scrollTo({
-          left: tripsRef.current.scrollLeft + 100,
+          left: tripsRef.current.scrollLeft + containerWidth + 260,
           behavior: 'smooth',
         });
       }

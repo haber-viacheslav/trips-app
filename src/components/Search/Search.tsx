@@ -14,6 +14,7 @@ export const Search: React.FC<SearchProps> = ({ value, onChange }) => (
       name="search"
       id="search"
       type="text"
+      autoComplete="false"
       value={value}
       onChange={onChange}
       placeholder="Search your trip"

@@ -237,14 +237,16 @@ export function App() {
             <HiddenTitle text={'Trips'} />
             <Search value={search} onChange={handleSearchChange} />
 
-            <TripsList
-              selectTrip={handleSelectTrip}
-              visibleTrips={getVisibleTrips().sort(
-                (prevTrip, nextTrip) =>
-                  +prevTrip.startTime - +nextTrip.startTime
-              )}
-              onToggle={handleToggleIsOpen}
-            />
+            {getVisibleTrips() && (
+              <TripsList
+                selectTrip={handleSelectTrip}
+                visibleTrips={getVisibleTrips().sort(
+                  (prevTrip, nextTrip) =>
+                    +prevTrip.startTime - +nextTrip.startTime
+                )}
+                onToggle={handleToggleIsOpen}
+              />
+            )}
           </Container>
         </Section>
         {selectedTrip &&

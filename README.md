@@ -5,7 +5,7 @@
 
 ![App Screenshot](https://res.cloudinary.com/dj6mkr2e6/image/upload/v1691537395/Screenshot_29_w7jrja.jpg)
 
-<a href="https://trips-app-gold.vercel.app/">Trips app Demo</a>
+<a href="https://haber-viacheslav.github.io/trips-app/">Trips app Demo</a>
 
 </div>
 
@@ -87,7 +87,7 @@ and [Node](https://nodejs.org/en/) installed.
 2. Navigate to the project directory using cd trips-app
 3. Run `npm install` to install the dependencies.
 4. Run `npm start` to start the development server.
-5. Open `http://localhost:3000` in your web browser.
+5. Open `http://localhost:3000/trips-app` in your web browser.
 
 Made with :heart: by
 <a href="https://github.com/haber-viacheslav" target="_blank">Haber
